@@ -35,28 +35,27 @@ class linked_list:
 		return self.get(index)
 
 	def get(self,index):
-		if index>=self.length():
-			print "ERROR: Index out of range!"
-			return None
 		cur_idx=0
 		cur_node=self.head
-		while True:
+		while cur_node.next!=None:
 			cur_node=cur_node.next
 			if cur_idx==index: return cur_node.data
 			cur_idx+=1
+		print "ERROR: Index out of range!"
+		return None
 
 	def erase(self,index):
-		if index>=self.length():
-			print "ERROR: Index out of range!"
-			return
 		cur_idx=0
 		cur_node=self.head
-		while True:
+		while cur_node.next!=None:
 			last_node=cur_node
 			cur_node=cur_node.next
 			if cur_idx==index:
 				last_node.next=cur_node.next
 				return
 			cur_idx+=1
+		print "ERROR: Index out of range!"
 
-			
+	def clear(self):
+		self.head.next=None
+
