@@ -31,6 +31,9 @@ class linked_list:
 			elems.append(cur_node.data)
 		print elems
 
+	def __getitem__(self,index):
+		return self.get(index)
+
 	def get(self,index):
 		if index>=self.length():
 			print "ERROR: Index out of range!"
@@ -52,19 +55,8 @@ class linked_list:
 			last_node=cur_node
 			cur_node=cur_node.next
 			if cur_idx==index:
-				las_node.next=cur_node.next
+				last_node.next=cur_node.next
 				return
 			cur_idx+=1
 
-my_list = linked_list()
-
-my_list.append(0)
-my_list.append(1)
-my_list.append(2)
-my_list.append(3)
-
-my_list.display()
-
-my_list.erase(1)
-
-my_list.display()
+			
