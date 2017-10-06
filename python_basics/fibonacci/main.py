@@ -10,6 +10,6 @@ def fibonacci(n):
 			last_fibs[0],last_fibs[1]=last_fibs[1],new_fib 
 			print new_fib
 
-fibonacci(10)
+fibonacci(100)
 
 
